@@ -78,7 +78,7 @@
 											<div id="timer"><h4>xxx일 xx시간 xx분 xx초</h4></div>
 										</div>
 										<div class="col-1">
-											<a href="javascript:void(0)" class="link">
+											<a id="kakao-link-btn" href="javascript:;" class="link">
 											<i class="mdi mdi-share"></i>
 											</a>
 										</div>
