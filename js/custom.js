@@ -96,40 +96,44 @@ $(function() {
     $("body").trigger("resize");
 });
 
-var current="<h4>최세환 전역!</h4>"
+
+
 var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
 
-var message=""
+var message="";
 function setitem(mday,mhour,mmin,msec)
 {
-  message="최세환 전역까지 " + mday + "일 " +mhour +"시간 " + mmin + "분 " + msec +"초 남음"
+  message="최세환 전역까지 " + mday + "일 " +mhour +"시간 " + mmin + "분 " + msec +"초 남음";
 }
 
-function countdown(yr,m,d){
-theyear=yr;themonth=m;theday=d
-var today=new Date()
-var todayy=today.getYear()
-if (todayy < 1000)
-todayy+=1900
-var todaym=today.getMonth()
-var todayd=today.getDate()
-var todayh=today.getHours()
-var todaymin=today.getMinutes()
-var todaysec=today.getSeconds()
-var todaystring=montharray[todaym]+" "+todayd+", "+todayy+" "+todayh+":"+todaymin+":"+todaysec
-futurestring=montharray[m-1]+" "+d+", "+yr
-dd=Date.parse(futurestring)-Date.parse(todaystring)
-dday=Math.floor(dd/(60*60*1000*24)*1)
-dhour=Math.floor((dd%(60*60*1000*24))/(60*60*1000)*1)
-dmin=Math.floor(((dd%(60*60*1000*24))%(60*60*1000))/(60*1000)*1)
-dsec=Math.floor((((dd%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1)
-if(dday<0){
-document.getElementById('timer').innerHTML=current
-return
-}
-else
-document.getElementById('timer').innerHTML="<h4>"+dday+ "일 "+dhour+"시간 "+dmin+" 분 "+dsec+"초</h4>"
-setTimeout("countdown(theyear,themonth,theday)",1000)
+function countdown(yr,m,d)
+{
+	theyear=yr;themonth=m;theday=d;
+	var today=new Date();
+	var todayy=today.getYear();
+	if (todayy < 1000)
+		todayy+=1900;
+	var todaym=today.getMonth();
+	var todayd=today.getDate();
+	var todayh=today.getHours();
+	var todaymin=today.getMinutes();
+	var todaysec=today.getSeconds();
+	var todaystring=montharray[todaym]+" "+todayd+", "+todayy+" "+todayh+":"+todaymin+":"+todaysec;
+	futurestring=montharray[m-1]+" "+d+", "+yr;
+	dd=Date.parse(futurestring)-Date.parse(todaystring);
+	dday=Math.floor(dd/(60*60*1000*24)*1);
+	dhour=Math.floor((dd%(60*60*1000*24))/(60*60*1000)*1);
+	dmin=Math.floor(((dd%(60*60*1000*24))%(60*60*1000))/(60*1000)*1);
+	dsec=Math.floor((((dd%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1);
+	if(dday<0){
+		$('#timer').html("<h4>최세환 전역!</h4>");
+		return;
+	}
+	else {
+		$('#timer').html("<h4>"+dday+ "일 "+dhour+"시간 "+dmin+" 분 "+dsec+"초</h4>");
+		setitem(dday,dhour,dmin,dsec);
+		setTimeout("countdown(theyear,themonth,theday)",1000);
+	}
 }
 //enter the count down date using the format year/month/day
 countdown(2024,02,29)
@@ -137,26 +141,26 @@ countdown(2024,02,29)
 
 Kakao.init('345699185ac59996cd9c071dc797c8b2');
     // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
-    Kakao.Link.createDefaultButton({
-      container: '#kakao-link-btn',
-      objectType: 'feed',
-      content: {
-        title: '최세환 전역일 계산기',
-        description: message,
-        imageUrl: 'https://jhpsoft.github.io/shawn/assets/images/users/profile.jpeg',
-        link: {
-          mobileWebUrl: 'https://jhpsoft.github.io/shawn/',
-          webUrl: 'https://jhpsoft.github.io/shawn/'
-        }
-      },
-      buttons: [
-        {
-          title: '앱으로 보기',
-          link: {
-            mobileWebUrl: 'https://jhpsoft.github.io/shawn/',
-            webUrl: 'https://jhpsoft.github.io/shawn/'
-          }
-        }
-      ]
-    });
+Kakao.Link.createDefaultButton({
+  container: '#kakao-link-btn',
+  objectType: 'feed',
+  content: {
+	title: '최세환 전역일 계산기',
+	description: message,
+	imageUrl: 'https://jhpsoft.github.io/shawn/assets/images/users/profile.jpeg',
+	link: {
+	  mobileWebUrl: 'https://jhpsoft.github.io/shawn/',
+	  webUrl: 'https://jhpsoft.github.io/shawn/'
+	}
+  },
+  buttons: [
+	{
+	  title: '앱으로 보기',
+	  link: {
+		mobileWebUrl: 'https://jhpsoft.github.io/shawn/',
+		webUrl: 'https://jhpsoft.github.io/shawn/'
+	  }
+	}
+  ]
+});
 
