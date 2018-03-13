@@ -96,8 +96,14 @@ $(function() {
     $("body").trigger("resize");
 });
 
-var current="<h3>박제욱 전역!</h3>"
+var current="<h4>최세환 전역!</h4>"
 var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+
+var message=""
+function setitem(mday,mhour,mmin,msec)
+{
+  message="최세환 전역까지 " + mday + "일 " +mhour +"시간 " + mmin + "분 " + msec +"초 남음"
+}
 
 function countdown(yr,m,d){
 theyear=yr;themonth=m;theday=d

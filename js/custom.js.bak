@@ -139,16 +139,16 @@ Kakao.init('345699185ac59996cd9c071dc797c8b2');
         description: message,
         imageUrl: 'https://jhpsoft.github.io/shawn/assets/images/users/profile.jpeg',
         link: {
-          mobileWebUrl: 'https://jhpsoft.github.io/jewook/',
-          webUrl: 'https://jhpsoft.github.io/jewook/'
+          mobileWebUrl: 'https://jhpsoft.github.io/shawn/',
+          webUrl: 'https://jhpsoft.github.io/shawn/'
         }
       },
       buttons: [
         {
           title: '앱으로 보기',
           link: {
-            mobileWebUrl: 'https://jhpsoft.github.io/jewook/',
-            webUrl: 'https://jhpsoft.github.io/jewook/'
+            mobileWebUrl: 'https://jhpsoft.github.io/shawn/',
+            webUrl: 'https://jhpsoft.github.io/shawn/'
           }
         }
       ]
