@@ -103,7 +103,7 @@ var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","
 var message="";
 function setitem(mday,mhour,mmin,msec)
 {
-  message="최세환 전역까지 " + mday + "일 " +mhour +"시간 " + mmin + "분 " + msec +"초 남음";
+  message=mday + "일 " +mhour +"시간 " + mmin + "분 " + msec +"초 남음";
 }
 
 function countdown(yr,m,d)
@@ -145,7 +145,7 @@ Kakao.Link.createDefaultButton({
   container: '#kakao-link-btn',
   objectType: 'feed',
   content: {
-	title: '최세환 전역일 계산기',
+	title: '최세환 전역까지',
 	description: message,
 	imageUrl: 'https://jhpsoft.github.io/shawn/assets/images/users/profile.jpeg',
 	link: {

@@ -139,3 +139,28 @@ function countdown(yr,m,d)
 countdown(2024,02,29)
 
 
+Kakao.init('345699185ac59996cd9c071dc797c8b2');
+    // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+Kakao.Link.createDefaultButton({
+  container: '#kakao-link-btn',
+  objectType: 'feed',
+  content: {
+	title: '최세환 전역일 계산기',
+	description: message,
+	imageUrl: 'https://jhpsoft.github.io/shawn/assets/images/users/profile.jpeg',
+	link: {
+	  mobileWebUrl: 'https://jhpsoft.github.io/shawn/',
+	  webUrl: 'https://jhpsoft.github.io/shawn/'
+	}
+  },
+  buttons: [
+	{
+	  title: '앱으로 보기',
+	  link: {
+		mobileWebUrl: 'https://jhpsoft.github.io/shawn/',
+		webUrl: 'https://jhpsoft.github.io/shawn/'
+	  }
+	}
+  ]
+});
+
