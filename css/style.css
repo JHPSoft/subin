@@ -7979,5 +7979,5 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
 
 	#timer
 	{
-		margin-right : 50px;
+		margin-right : -50px;
 	}
