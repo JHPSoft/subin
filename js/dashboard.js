@@ -11,8 +11,8 @@ $(function() {
     // ============================================================== 
 
 	var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
-	var Date_start = new Date(2017,3,8);
-	var Date_end = new Date(2024,2,29);
+	var Date_start = new Date(2019,12,01);
+	var Date_end = new Date(2052,12,31);
 	var Date_today = new Date();
 
 	var Days1 = Math.round(Math.abs((Date_today.getTime() - Date_start.getTime())/(oneDay)));
