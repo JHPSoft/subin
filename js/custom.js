@@ -126,7 +126,7 @@ function countdown(yr,m,d)
 	dmin=Math.floor(((dd%(60*60*1000*24))%(60*60*1000))/(60*1000)*1);
 	dsec=Math.floor((((dd%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1);
 	if(dday<0){
-		$('#timer').html("<h4>최세환 전역!</h4>");
+		$('#timer').html("<h4>최수빈 전역!</h4>");
 		return;
 	}
 	else {
@@ -136,7 +136,7 @@ function countdown(yr,m,d)
 	}
 }
 //enter the count down date using the format year/month/day
-countdown(2024,02,29)
+countdown(2052,12,31)
 
 
 Kakao.init('345699185ac59996cd9c071dc797c8b2');
@@ -145,20 +145,20 @@ Kakao.Link.createDefaultButton({
   container: '#kakao-link-btn',
   objectType: 'feed',
   content: {
-	title: '최세환 전역까지',
+	title: '최수빈 전역까지',
 	description: message,
-	imageUrl: 'https://jhpsoft.github.io/shawn/assets/images/users/profile.jpeg',
+	imageUrl: 'https://jhpsoft.github.io/shawn/assets/images/profile.jpeg',
 	link: {
-	  mobileWebUrl: 'https://jhpsoft.github.io/shawn/',
-	  webUrl: 'https://jhpsoft.github.io/shawn/'
+	  mobileWebUrl: 'https://jhpsoft.github.io/subin/',
+	  webUrl: 'https://jhpsoft.github.io/subin/'
 	}
   },
   buttons: [
 	{
 	  title: '앱으로 보기',
 	  link: {
-		mobileWebUrl: 'https://jhpsoft.github.io/shawn/',
-		webUrl: 'https://jhpsoft.github.io/shawn/'
+		mobileWebUrl: 'https://jhpsoft.github.io/subin/',
+		webUrl: 'https://jhpsoft.github.io/subin/'
 	  }
 	}
   ]
