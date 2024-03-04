@@ -9,23 +9,22 @@ $(function() {
     // ============================================================== 
     // Our visitor
     // ============================================================== 
+    
+    var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+    var Date_start = new Date(2019,11,01);
+    var Date_end = new Date(2052,11,31);
+    var Date_today = new Date();
 
-	var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
-	var Date_start = new Date(2019,12,01);
-	var Date_end = new Date(2052,12,31);
-	var Date_today = new Date();
-
-	var Days1 = Math.round(Math.abs((Date_today.getTime() - Date_start.getTime())/(oneDay)));
-	var Days2 = Math.round(Math.abs((Date_end.getTime() - Date_today.getTime())/(oneDay)));
+    var Days1 = Math.round(Math.abs((Date_today.getTime() - Date_start.getTime())/(oneDay)));
+    var Days2 = Math.round(Math.abs((Date_end.getTime() - Date_today.getTime())/(oneDay)));
 
     var chart = c3.generate({
         bindto: '#visitor',
         data: {
             columns: [
                 ['복무일', Days1],
-				['남은 날', Days2]
+                ['남은 날', Days2]
             ],
-
             type: 'donut',
         },
         donut: {
@@ -34,21 +33,12 @@ $(function() {
             },
             title: "",
             width: 10,
-
         },
-
         legend: {
             hide: true
-                //or hide: 'data1'
-                //or hide: ['data1', 'data2']
         },
         color: {
             pattern: ['#1e88e5', '#eceff1']
         }
     });
-
-
-
-
-
 });
